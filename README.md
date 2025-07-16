@@ -29,3 +29,6 @@ Step 7: Evaluate the Model
 Evaluate the Model how well the model performs on the unseen test data.
 Step 8: Make Predictions and Plot Confusion Matrix
 I predict classes and evaluate performance using a confusion matrix to see which classes are confused with each other.
+OUTPUT:
+<img width="1222" height="822" alt="Image" src="https://github.com/user-attachments/assets/2b462d6f-3353-4965-ac65-872ea809af18" />
+
