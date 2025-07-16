@@ -6,29 +6,45 @@ DOMAIN: MACHINE LEARNING
 DURATION: 4 WEEKS
 MENTOR: NEELA SANTOSH
 DESCRIPTION :
-The goal of this task is to build a Convolutional Neural Network (CNN) using TensorFlow (or PyTorch) that can classify images into categories. 
-I have used the CIFAR-10 dataset, which includes small 32x32 pixel color images of real-world objects like dogs, ships, and airplanes.
+In this task, I build a Convolutional Neural Network (CNN) using TensorFlow to classify images of clothing items from the Fashion MNIST dataset. 
+CNNs are deep learning models designed specifically for image processing — 
+they can automatically learn spatial features such as edges, shapes, and textures that help in classifying images accurately.
+The Fashion MNIST dataset contains 70,000 grayscale images (60,000 for training and 10,000 for testing), 
+each of size 28x28 pixels, across 10 categories such as t-shirts, shoes, bags, etc. Each image is labeled with a class ranging from 0 to 9.
+
 Step 1: Import Required Libraries
- importing TensorFlow and other useful libraries like matplotlib for plotting, and NumPy for data manipulation.
-Step 2: Load and Explore the CIFAR-10 Dataset
-TensorFlow provides the CIFAR-10 dataset built-in, so it’s easy to load and split into training and test sets.
-then normalize the pixel values to range between 0 and 1 by dividing by 255, which helps speed up model training.
- Step 3: Visualize the Images
-I use matplotlib to see a few sample images and confirm that the data looks correct.
- Step 4: Build the CNN Model
-Then, I stack layers using Keras' Sequential API. 
-A CNN typically includes: 
-1.Conv2D: learns features from image patches.
-2.MaxPooling2D: reduces image size.
-3.Flatten + Dense: turns features into predictions.
+First, I import necessary Python libraries
+
+Step 2: Load the Dataset
+The Fashion MNIST dataset is available directly in TensorFlow. I Just load and split it into training and testing data.
+
+ Step 3: Preprocess the Data
+Before feeding images to the model:
+Normalize pixel values (from 0-255 to 0-1)
+Reshape images to include a channel dimension (28, 28, 1)
+
+ Step 4:: Define the CNN Model
+I build a CNN using Sequential() with layers:
+Conv2D: Applies convolution filters (It learns features from image patches)
+MaxPooling2D: Reduces spatial size (It reduces image size)
+Flatten: Converts 2D into 1D (turns features into predictions)
+Dense: Fully connected layers for prediction.  (It also turns features into predictions).
+
 Step 5: Compile the Model
-I choose the optimizer, loss function, and evaluation metric. Categorical crossentropy is used for multiclass classification.
+Then, I compile the model with:
+loss: sparse_categorical_crossentropy (for multi-class)
+optimizer: adam (adaptive learning)
+metrics: For accuracy
+
 Step 6: Train the Model
-Then, I train the model using training data for several epochs or cycles.
-Step 7: Evaluate the Model
-Evaluate the Model how well the model performs on the unseen test data.
-Step 8: Make Predictions and Plot Confusion Matrix
-I predict classes and evaluate performance using a confusion matrix to see which classes are confused with each other.
+Then, I train the model using the training data for a few epochs.
+
+Step 7: Make Predictions
+Then, I use the trained model to predict new images.
+
+Step 8: Visualize Some Predictions
+Plot images along with their actual and predicted labels.
+
 OUTPUT:
 <img width="1222" height="822" alt="Image" src="https://github.com/user-attachments/assets/2b462d6f-3353-4965-ac65-872ea809af18" />
 
